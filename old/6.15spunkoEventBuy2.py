@@ -1,14 +1,14 @@
-import os
 import asyncio
 import json
-from web3 import Web3, HTTPProvider
+import os
+from datetime import datetime
+
+from dotenv import load_dotenv
 from requests import Session
 from requests.adapters import HTTPAdapter
-from urllib3 import Retry
-from datetime import datetime
 from termcolor import colored
-from dotenv import load_dotenv
-
+from urllib3 import Retry
+from web3 import HTTPProvider, Web3
 
 load_dotenv()
 

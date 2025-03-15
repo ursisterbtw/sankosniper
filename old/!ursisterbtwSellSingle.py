@@ -1,7 +1,8 @@
 import json
 import os
-from web3 import Web3
+
 from dotenv import load_dotenv
+from web3 import Web3
 
 load_dotenv()
 
@@ -59,7 +60,9 @@ def sell_one_pass(streamer_addresses):
                 f"Sold 1 pass for streamer {checksummed_streamer_address}. Transaction hash: {txn_hash.hex()}"
             )
         else:
-            print(f"No unlocked passes to sell for streamer {checksummed_streamer_address}.")
+            print(
+                f"No unlocked passes to sell for streamer {checksummed_streamer_address}."
+            )
 
 
 if __name__ == "__main__":

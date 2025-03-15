@@ -1,8 +1,9 @@
 import json
 import os
 import time
-from web3 import Web3
+
 from dotenv import load_dotenv
+from web3 import Web3
 
 # working 6/4/24
 
@@ -30,6 +31,7 @@ STREAMER_ADDRESSES = [
     "XYZXYZXYZ",
     "XYZXYZXYZ",
 ]
+
 
 def sell_all_passes(streamer_address):
     checksummed_streamer_address = Web3.to_checksum_address(streamer_address)
@@ -61,6 +63,7 @@ def sell_all_passes(streamer_address):
         )
     else:
         print("No unlocked passes to sell for the given streamer.")
+
 
 if __name__ == "__main__":
     for streamer_address in STREAMER_ADDRESSES:

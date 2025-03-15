@@ -1,7 +1,8 @@
 import json
 import os
-from web3 import Web3
+
 from dotenv import load_dotenv
+from web3 import Web3
 
 # Load environment variables
 load_dotenv()
@@ -28,6 +29,7 @@ STREAMER_ADDRESSES = [
     "0x9f8da9561c9b247ee3fddb6713c5ab8b19f21a36",
 ]
 
+
 def sell_one_pass_if_supply_sufficient(streamer_addresses):
     checksummed_my_address = Web3.to_checksum_address(my_address)
 
@@ -35,9 +37,7 @@ def sell_one_pass_if_supply_sufficient(streamer_addresses):
         checksummed_streamer_address = Web3.to_checksum_address(streamer_address)
 
         # Fetch the total supply of passes for the streamer
-        supply = contract.functions.passesSupply(
-            checksummed_streamer_address
-        ).call()
+        supply = contract.functions.passesSupply(checksummed_streamer_address).call()
 
         # Check if supply is greater than or equal to 6
         if supply >= 6:
@@ -66,9 +66,14 @@ def sell_one_pass_if_supply_sufficient(streamer_addresses):
                     f"Sold 1 pass for streamer {checksummed_streamer_address} with sufficient supply. Transaction hash: {txn_hash.hex()}"
                 )
             else:
-                print(f"No unlocked passes to sell for streamer {checksummed_streamer_address}.")
+                print(
+                    f"No unlocked passes to sell for streamer {checksummed_streamer_address}."
+                )
         else:
-            print(f"Supply for streamer {checksummed_streamer_address} is not sufficient for selling.")
+            print(
+                f"Supply for streamer {checksummed_streamer_address} is not sufficient for selling."
+            )
+
 
 if __name__ == "__main__":
     sell_one_pass_if_supply_sufficient(STREAMER_ADDRESSES)

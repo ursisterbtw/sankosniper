@@ -1,10 +1,11 @@
-import os
 import asyncio
-import httpx
-import json
 import datetime
-from web3 import Web3
+import json
+import os
+
+import httpx
 from dotenv import load_dotenv
+from web3 import Web3
 
 load_dotenv()
 
@@ -50,7 +51,7 @@ costs_at_supply = [
     0.05011875,
     0.0539,
     0.05781875,
-    0.061875
+    0.061875,
     # Add more costs if needed
 ]
 
@@ -149,7 +150,7 @@ async def monitor_transactions(seen_hashes):
                     )
                     streamer_address = item.get("streamer", {}).get("address", "")
                     eth_amount_str = item.get("ethAmount", "0")
-                    eth_amount = float(eth_amount_str) / 10**18
+                    float(eth_amount_str) / 10**18
                     pass_amount = int(item.get("passAmount", "0"))
                     supply = int(item.get("supply", 0))
 
@@ -168,11 +169,10 @@ async def monitor_transactions(seen_hashes):
 
                         if streamer_username in held_passes:
                             held_pass_count = held_passes[streamer_username]
-                            total_eth_value = 0
-                            for i in range(held_pass_count):
-                                supply_index = max(supply - i - 1, 0)
-                                total_eth_value += costs_at_supply[supply_index]
-
+                            total_eth_value = sum(
+                                costs_at_supply[max(supply - i - 1, 0)]
+                                for i in range(held_pass_count)
+                            )
                         current_held = held_passes[streamer_username]
                         current_supply = streamer_supply.get(streamer_username, 0)
                         message = f"@{trader_username} is now holding {current_held} @{streamer_username} passes, worth {total_eth_value:.8f} ETH - Supply : {current_supply}\nStreamer Address : {streamer_address}"

@@ -1,5 +1,6 @@
-import os
 import asyncio
+import os
+
 import httpx
 from dotenv import load_dotenv
 
@@ -43,7 +44,7 @@ costs_at_supply = [
     0.05011875,
     0.0539,
     0.05781875,
-    0.061875
+    0.061875,
     # Add more costs if needed
 ]
 
@@ -97,7 +98,7 @@ async def monitor_transactions(seen_hashes):
                         item.get("streamer", {}).get("twitterUsername", "").lower()
                     )
                     eth_amount_str = item.get("ethAmount", "0")
-                    eth_amount = float(eth_amount_str) / 10**18
+                    float(eth_amount_str) / 10**18
                     pass_amount = int(item.get("passAmount", "0"))
                     supply = int(item.get("supply", 0))
 
@@ -116,12 +117,10 @@ async def monitor_transactions(seen_hashes):
 
                         if streamer_username in held_passes:
                             held_pass_count = held_passes[streamer_username]
-                            total_eth_value = 0
-                            for i in range(held_pass_count):
-                                # Ensure we don't go below the first index
-                                supply_index = max(supply - i - 1, 0)
-                                total_eth_value += costs_at_supply[supply_index]
-
+                            total_eth_value = sum(
+                                costs_at_supply[max(supply - i - 1, 0)]
+                                for i in range(held_pass_count)
+                            )
                         # Include the total ETH value of held passes in the message
                         current_held = held_passes[streamer_username]
                         current_supply = streamer_supply.get(streamer_username, 0)
