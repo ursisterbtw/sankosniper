@@ -90,7 +90,7 @@ This toolkit is for educational purposes. Trading cryptocurrencies and blockchai
 
 ## License
 
-[Specify your license here]
+[MIT]
 
 ## Contributing
 
