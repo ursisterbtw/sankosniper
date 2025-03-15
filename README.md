@@ -1,12 +1,12 @@
 # `sanko_sniper`
 
 <div align="center">
-  <img src="gh-banner.svg" alt="SpunkoSniper Banner" width="100%">
+  <img src="gh-banner.svg" alt="sankosniper banner" width="100%">
 </div>
 
 ## Overview
 
-SpunkoSniper is a sophisticated Web3 automation toolkit designed for monitoring and executing pass trading strategies on a specific blockchain-based pass trading platform. The toolkit provides a suite of Python scripts that enable automated transaction monitoring, pass purchasing, and trading activities.
+sankosniper is a Web3 automation toolkit designed for monitoring and executing pass trading strategies on a specific blockchain-based pass trading platform. The toolkit provides a suite of Python scripts that enable automated transaction monitoring, pass purchasing, and trading activities.
 
 ## Features
 
@@ -38,12 +38,12 @@ SpunkoSniper is a sophisticated Web3 automation toolkit designed for monitoring 
 
 ### Main Scripts
 
-1. `spunkoUserSniperSecurev2.py`
+1. `twitter_sniper.py`
    - Core pass sniping logic
    - Automated pass purchasing
    - Transaction filtering and analysis
 
-2. `spunkoTwitterHitterSecurev2.py`
+2. `twitter_sniper_v2.py`
    - Twitter-based follower analysis
    - Enhanced trading strategy with social metrics
 
