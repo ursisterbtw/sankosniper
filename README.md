@@ -1,4 +1,4 @@
-# `sankosniper` sanko.tv sniping
+# `sankosniper`: a winning sanko.tv pass sniper
 
 <div align="center">
   <img src="gh-banner.svg" alt="sankosniper banner" width="100%">
