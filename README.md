@@ -94,4 +94,5 @@ This toolkit is for educational purposes. Trading cryptocurrencies and blockchai
 
 ## Contributing
 
-Contributions are welcome! Please read the contributing guidelines before submitting pull requests.
+Contributions are welcome!
+
