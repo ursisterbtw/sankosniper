@@ -1,0 +1,144 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400" width="1200" height="400">
+    <defs>
+        <!-- Gradient Background -->
+        <linearGradient id="bg-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" style="stop-color:#0A1128;stop-opacity:1" />
+            <stop offset="100%" style="stop-color:#001220;stop-opacity:1" />
+        </linearGradient>
+
+        <!-- Targeting Dot Animation -->
+        <filter id="laser-glow">
+            <feGaussianBlur stdDeviation="3" />
+            <feColorMatrix type="matrix" values="1 0 0 0 0.8 0 1 0 0 0 0 0 1 0 0 0 0 0 0.7 0" />
+        </filter>
+
+        <!-- Crosshair Pattern -->
+        <pattern id="crosshair-pattern" width="10" height="10" patternUnits="userSpaceOnUse">
+            <path d="M5 0 V10 M0 5 H10" stroke="#00FF87" stroke-width="1" opacity="0.5"/>
+        </pattern>
+
+        <!-- Motion Path for Crosshair -->
+        <path id="motionPath" d="M600,200 C500,150 300,250 300,150 S700,50 900,250 S500,350 450,300 S850,50 750,100 S700,250 600,200" fill="none" visibility="hidden"/>
+    </defs>
+
+    <!-- Background -->
+    <rect width="1200" height="400" fill="url(#bg-gradient)"/>
+
+    <!-- Animated Targeting Dots -->
+    <g>
+        <!-- First Dot -->
+        <circle cx="200" cy="100" r="5" fill="#FF0000" filter="url(#laser-glow)">
+            <animate attributeName="cx" values="200;600;900;300;200" 
+                     dur="12s" 
+                     repeatCount="indefinite" 
+                     calcMode="discrete"/>
+            <animate attributeName="cy" values="100;250;350;50;100" 
+                     dur="12s" 
+                     repeatCount="indefinite" 
+                     calcMode="discrete"/>
+        </circle>
+
+        <!-- Second Dot -->
+        <circle cx="1000" cy="300" r="5" fill="#FF0000" filter="url(#laser-glow)">
+            <animate attributeName="cx" values="1000;400;150;800;1000" 
+                     dur="15s" 
+                     repeatCount="indefinite" 
+                     calcMode="discrete"/>
+            <animate attributeName="cy" values="300;100;250;350;300" 
+                     dur="15s" 
+                     repeatCount="indefinite" 
+                     calcMode="discrete"/>
+        </circle>
+    </g>
+
+    <!-- Glitch Effect Lines -->
+    <g opacity="0.3" stroke-width="1">
+        <line x1="0" y1="50" x2="1200" y2="50" stroke="#00FF87" stroke-dasharray="5,5">
+            <animate attributeName="y1" values="50;60;50" dur="2s" repeatCount="indefinite"/>
+        </line>
+        <line x1="0" y1="350" x2="1200" y2="350" stroke="#60EFFF" stroke-dasharray="5,5">
+            <animate attributeName="y1" values="350;340;350" dur="2s" repeatCount="indefinite"/>
+        </line>
+    </g>
+
+    <!-- Detailed Crosshairs -->
+    <g>
+        <!-- Main Crosshair -->
+        <g>
+            <animateMotion 
+                dur="18s"
+                repeatCount="indefinite"
+                path="M600,200 C500,150 300,250 300,150 S700,50 900,250 S500,350 450,300 S850,50 750,100 S700,250 600,200"
+                keyPoints="0;0.2;0.4;0.6;0.8;1"
+                keyTimes="0;0.2;0.4;0.6;0.8;1"
+                calcMode="spline"
+                keySplines="0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1"/>
+
+            <!-- Outer Circle -->
+            <circle r="180" stroke="#00FF87" fill="url(#crosshair-pattern)" fill-opacity="0.2" stroke-dasharray="10,10">
+                <animate attributeName="r" values="180;185;180" dur="2s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1; 0.4 0 0.6 1"/>
+            </circle>
+
+            <!-- Inner Circle -->
+            <circle r="120" stroke="#60EFFF" fill="url(#crosshair-pattern)" fill-opacity="0.1" stroke-dasharray="5,5">
+                <animate attributeName="r" values="120;125;120" dur="2s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1; 0.4 0 0.6 1"/>
+            </circle>
+            
+            <!-- Precise Crosshair Lines -->
+            <line x1="-200" x2="200" y1="0" y2="0" stroke="#00FF87" stroke-width="1"/>
+            <line x1="0" y1="-200" x2="0" y2="200" stroke="#00FF87" stroke-width="1"/>
+
+            <!-- Smooth Pulse Effect -->
+            <circle r="5" fill="#00FF87" opacity="0.8">
+                <animate attributeName="r" 
+                         values="5;25;5"
+                         dur="2s"
+                         repeatCount="indefinite"
+                         calcMode="spline"
+                         keySplines="0.4 0 0.6 1; 0.4 0 0.6 1"/>
+                <animate attributeName="opacity"
+                         values="0.8;0.2;0.8"
+                         dur="2s"
+                         repeatCount="indefinite"
+                         calcMode="spline"
+                         keySplines="0.4 0 0.6 1; 0.4 0 0.6 1"/>
+            </circle>
+        </g>
+    </g>
+
+    <!-- Text -->
+    <text x="90" y="360" 
+          text-anchor="start" 
+          font-family="monospace" 
+          font-size="48" 
+          fill="#60EFFF" 
+          font-weight="bold"
+          opacity="0.9">
+        sankosniper:
+    </text>
+
+    <text x="1200" y="360" 
+          text-anchor="end" 
+          font-family="monospace" 
+          font-size="24" 
+          fill="#00FF87" 
+          opacity="0.7">
+        a fully automated sanko.tv trading bot (deprecated)
+    </text>
+
+    <!-- Animated Data Points -->
+    <g fill="#60EFFF" opacity="0.6">
+        <circle cx="300" cy="100" r="5">
+            <animate attributeName="cy" values="100;90;100" dur="2s" repeatCount="indefinite"/>
+        </circle>
+        <circle cx="900" cy="300" r="5">
+            <animate attributeName="cy" values="300;310;300" dur="2s" repeatCount="indefinite"/>
+        </circle>
+        <circle cx="150" cy="250" r="5">
+            <animate attributeName="cx" values="150;160;150" dur="3s" repeatCount="indefinite"/>
+        </circle>
+        <circle cx="1050" cy="150" r="5">
+            <animate attributeName="cx" values="1050;1040;1050" dur="3s" repeatCount="indefinite"/>
+        </circle>
+    </g>
+</svg>

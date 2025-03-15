@@ -1,0 +1,9 @@
+web3
+httpx
+python-dotenv
+asyncio
+termcolor
+pyotp
+tweety
+requests
+csv

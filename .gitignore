@@ -1,0 +1,41 @@
+# Environment files
+.env
+*.env
+
+# Python bytecode
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+venv/
+env/
+.venv/
+
+# Session and token files
+*.tw_session
+*.token
+
+# Logs and transaction records
+*.csv
+*.log
+
+# Sensitive configuration files
+abi.json
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# IDE specific files
+.vscode/
+.idea/
+
+# Sensitive text files
+blacklist.txt
+costs.txt
+list3cat.txt
+
+session.tw_session
+spunkoEventBuy2.py
+spunkoAsync6.py

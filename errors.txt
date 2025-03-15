@@ -1,0 +1,33 @@
+1 : user sniper
+
+Traceback (most recent call last):
+  File "c:\Users\kjako\OneDrive\Desktop\code\spunko.tv\spunkoGithub\spunkoUserSniperSecurev2.py", line 1280, in <module>
+    asyncio.run(main())
+  File "C:\Users\kjako\AppData\Local\Programs\Python\Python310\lib\asyncio\runners.py", line 44, in run    
+    return loop.run_until_complete(main)
+  File "C:\Users\kjako\AppData\Local\Programs\Python\Python310\lib\asyncio\base_events.py", line 646, in run_until_complete
+    return future.result()
+  File "c:\Users\kjako\OneDrive\Desktop\code\spunko.tv\spunkoGithub\spunkoUserSniperSecurev2.py", line 1274erSniperSecurev2.py", line 1274, in main
+    await display_transactions(reversed(filtered))
+  File "c:\Users\kjako\OneDrive\Desktop\code\spunko.tv\spunkoGithub\spunkoUserSniperSecurev2.py", line 1227erSniperSecurev2.py", line 1227, in display_transactions
+    success = await purchase_passes(
+  File "c:\Users\kjako\OneDrive\Desktop\code\spunko.tv\spunkoGithub\spunkoUserSniperSecurev2.py", line 1108erSniperSecurev2.py", line 1108, in purchase_passes
+    checksummed_streamer_address = Web3.toChecksumAddress(streamer_address) 
+AttributeError: type object 'Web3' has no attribute 'toChecksumAddress'. Did you mean: 'to_checksum_address you mean: 'to_checksum_address'?
+PS C:\Users\kjako\OneDrive\Desktop\code\spunko.tv\spunkoGithub>
+
+2 : twitter hitter
+
+Traceback (most recent call last):
+  File "c:\Users\kjako\OneDrive\Desktop\code\spunko.tv\spunkoGithub\spunkoTwitterHitterSecurev2.py", line 1315, in <module>
+    asyncio.run(main())
+  File "C:\Users\kjako\AppData\Local\Programs\Python\Python310\lib\asyncio\runners.py", line 44, in run    
+    return loop.run_until_complete(main)
+  File "C:\Users\kjako\AppData\Local\Programs\Python\Python310\lib\asyncio\base_events.py", line 646, in run_until_complete
+    return future.result()
+  File "c:\Users\kjako\OneDrive\Desktop\code\spunko.tv\spunkoGithub\spunkoTwitterHitterSecurev2.py", line 1310, in main
+    await display_transactions(reversed(filtered), blacklist)
+  File "c:\Users\kjako\OneDrive\Desktop\code\spunko.tv\spunkoGithub\spunkoTwitterHitterSecurev2.py", line 1284, in display_transactions
+    success = await purchase_passes(
+TypeError: purchase_passes() missing 1 required positional argument: 'price'
+PS C:\Users\kjako\OneDrive\Desktop\code\spunko.tv\spunkoGithub> 
