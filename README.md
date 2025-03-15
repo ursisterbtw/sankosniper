@@ -1,4 +1,4 @@
-# `sanko_sniper`
+# `sankosniper` sanko.tv sniping
 
 <div align="center">
   <img src="gh-banner.svg" alt="sankosniper banner" width="100%">
