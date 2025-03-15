@@ -86,7 +86,7 @@ sankosniper is a Web3 automation toolkit designed for monitoring and executing p
 
 ## Disclaimer
 
-This toolkit is for educational purposes. Trading cryptocurrencies and blockchain passes involves significant financial risk. Use responsibly and understand the potential consequences.
+This toolkit is for educational purposes. It's long deprecated but may serve as a framework for newer developers looking for onchain opportunities going forward.
 
 ## License
 
