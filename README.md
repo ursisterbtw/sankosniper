@@ -96,3 +96,7 @@ This toolkit is for educational purposes. It's long deprecated but may serve as 
 
 Contributions are welcome!
 
+## Acknowledgements
+
+All credit goes to @erc1337-Coffee as he graciously (and patiently) walked me through a friendtech sniper that he built which 100% was the context I needed to see to start conceptualizing MEV frameworks on my own. Cheers.
+
