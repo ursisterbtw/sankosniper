@@ -6,7 +6,7 @@
 
 ## Overview
 
-sankosniper is a Web3 automation toolkit designed for monitoring and executing pass trading strategies on a specific blockchain-based pass trading platform. The toolkit provides a suite of Python scripts that enable automated transaction monitoring, pass purchasing, and trading activities, as well as configurable take-profit and stop-loss settings.
+sankosniper is a Web3 automation toolkit designed for monitoring and executing pass trading strategies on a sanko.tv streaming / trading platform. It provides a suite of Python scripts that enable automated transaction monitoring, pass purchasing, and trading activities, as well as configurable take-profit and stop-loss settings.
 
 ## Features
 
